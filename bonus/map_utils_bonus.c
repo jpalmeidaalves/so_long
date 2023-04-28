@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_utils_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaoalme <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: joaoalme <joaoalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 19:21:02 by joaoalme          #+#    #+#             */
-/*   Updated: 2023/04/17 22:17:55 by joaoalme         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:56:14 by joaoalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ static void	check_map(t_data *info)
 		exit_free_maps_msg(info, "Error: Ilegal char in map");
 	if (info->map_data.not_rect == 1)
 		exit_free_maps_msg(info, "Error: Map isn't rectangular");
+	if (info->map_data.nb_d != 1)
+		exit_free_maps_msg(info, "Error: More than one or no patrol");
 	is_valid_path(info);
 }
 

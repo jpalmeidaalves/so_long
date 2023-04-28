@@ -40,6 +40,7 @@ int	close_clean(t_data *info)
 	free(info->mlx_ptr);
 	free_maps(info);
 	free(info->anim);
+	print_credits();
 	exit(EXIT_SUCCESS);
 	return (0);
 }

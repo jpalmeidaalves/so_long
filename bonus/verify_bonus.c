@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   verify_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaoalme <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: joaoalme <joaoalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 19:52:00 by joaoalme          #+#    #+#             */
-/*   Updated: 2023/04/11 19:45:22 by joaoalme         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:47:57 by joaoalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/so_long_bonus.h"
+
+void	print_credits(void)
+{
+	ft_printf("PIXEL ART CREDITS:\n");
+	ft_printf("Hero and Patrol sprite by Sven Thole obtained in itch.io\n");
+	ft_printf("\n                  GAME OVER\n");
+}
 
 void	check_file_name(char *file)
 {

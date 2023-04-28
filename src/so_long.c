@@ -6,7 +6,7 @@
 /*   By: joaoalme <joaoalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 19:21:35 by joaoalme          #+#    #+#             */
-/*   Updated: 2023/04/17 21:59:24 by joaoalme         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:48:07 by joaoalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	print_credits(void)
 {
 	ft_printf("PIXEL ART CREDITS:\n");
 	ft_printf("Hero sprite is Light bandit by Sven Thole obtained in itch.io\n");
+	ft_printf("\n                  GAME OVER\n");
 }
 
 int	handle_keyboard(int key, t_data *info )
@@ -54,7 +55,10 @@ int	main(int ac, char **av)
 	t_data	info;	
 
 	if (ac != 2)
+	{
 		ft_printf("Usage: ./so_long [map path]");
+		return (0);
+	}
 	info.map_data.path = av[1];
 	read_map(&info);
 	start_info(&info);
