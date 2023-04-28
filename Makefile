@@ -6,13 +6,14 @@ CC      	= clang
 
 CFLAGS		= -Wall -Werror -Wextra -g
 
-MLXFLAGS	= -lX11 -lXext -lmlx -lm -lbsd
-
 RM		= rm -rf
 
 LIBFT		= ./libft/libft.a
 
-MLX		=-L./minilibx-linux/.
+MLX_DIR:= ./minilibx-linux
+MLX		= $(MLX_DIR)/libmlx.a
+
+MLXFLAGS	= -lX11 -lXext -lm -lbsd
 
 SRC		= $(wildcard src/*.c)
 
@@ -22,20 +23,18 @@ SRC_B		= $(wildcard bonus/*.c)
 
 OBJ_B		= $(SRC_B:.c=.o)
 
-
-
 all: $(SO_LONG)
 
 $(SO_LONG): $(OBJ) $(SRC) $(LIBFT) $(MLX)
-	$(CC) $(SRC) $(MLX) $(LIBFT) $(CFLAGS) $(MLXFLAGS) -o so_long
+	$(CC) $(CFLAGS) $(MLXFLAGS) $(SRC) $(MLX) $(LIBFT) -o so_long
 
 $(BONUS): $(OBJ_B) $(SRC_B) $(LIBFT) $(MLX)
-	$(CC) $(SRC_B) $(MLX) $(LIBFT) $(CFLAGS) $(MLXFLAGS) -o so_long_b
+	$(CC) $(CFLAGS) $(MLXFLAGS) $(SRC_B) $(MLX) $(LIBFT) -o so_long_b
 	
 $(LIBFT):
 	$(MAKE) -C ./libft
 
-$(MLX):
+$(MLX):	
 	$(MAKE) -C ./minilibx-linux
 
 clean:
